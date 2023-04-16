@@ -1,12 +1,14 @@
 import React from "react";
 import Header from "./components/Layout/Header";
-import About from "./components/About/About";
+import MealsSummery from "./components/Meals/MealsSummery";
+import AvailableMeals from "./components/Meals/AvailableMeals";
 
 function App() {
   return (
     <>
       <Header></Header>
-      <About></About>
+      <MealsSummery></MealsSummery>
+      <AvailableMeals />
     </>
   );
 }

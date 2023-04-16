@@ -1,8 +1,8 @@
 import classes from "./About.module.css";
 
-function About(props) {
+function MealsSummery() {
   return (
-    <div className={classes.about}>
+    <section className={classes.about}>
       <h1>Delicious Food, Delivered To You</h1>
       <p>
         Choose your favorie meal from our broad selection of avaliable meals and
@@ -12,8 +12,8 @@ function About(props) {
         All our meals are cooked with high- uality ingredients, just-in-time and
         of course by experienced chefs!
       </p>
-    </div>
+    </section>
   );
 }
 
-export default About;
+export default MealsSummery;
