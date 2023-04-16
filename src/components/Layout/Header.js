@@ -1,11 +1,19 @@
 import React from "react";
+import mealsimage from "../../assets/meals.jpg";
+import classes from "./Header.module.css";
+import HeaderCartButton from "./HeaderCartButton";
 
 function Header(props) {
   return (
-    <div className="header">
-      <h1>ReactMeals</h1>
-      <div>Your Cart {props.num}</div>
-    </div>
+    <>
+      <header className={classes.header}>
+        <h1>Online Restaurant</h1>
+        <HeaderCartButton></HeaderCartButton>
+      </header>
+      <div className={classes["main-image"]}>
+        <img src={mealsimage} alt="Atable full of delicious food" />
+      </div>
+    </>
   );
 }
 
