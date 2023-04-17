@@ -1,9 +1,9 @@
-import classes from "./About.module.css";
+import classes from "./MealSummery.module.css";
 
 function MealsSummery() {
   return (
-    <section className={classes.about}>
-      <h1>Delicious Food, Delivered To You</h1>
+    <section className={classes.summary}>
+      <h2>Delicious Food, Delivered To You</h2>
       <p>
         Choose your favorie meal from our broad selection of avaliable meals and
         enjoy a delicious lunch or dilever at home.

@@ -1,35 +1,66 @@
 import React from "react";
-import classes from "./Meals.module.css";
-import Meal from "./Meal";
+import classes from "./AvailableMeals.module.css";
+import Card from "../UI/Card";
+import MealItem from "./MealItem/MealItem";
 
+const mealsall = [
+  {
+    id: "e1",
+    mealName: "Sushi",
+    discription: "Finest fish and veggies",
+    price: 33.99,
+  },
+  {
+    id: "e2",
+    mealName: "Schnitzel",
+    discription: "A germen speciality!",
+    price: 16.99,
+  },
+  {
+    id: "e1",
+    mealName: "Barbecue Burger",
+    discription: "American, raw, meaty",
+    price: 12.99,
+  },
+  {
+    id: "e1",
+    mealName: "Green Bowl",
+    discription: "Healthy.. and green...",
+    price: 29.54,
+  },
+];
 function AvailableMeals() {
-  const mealsall = [
-    { mealName: "Sushi", discription: "Finest fish and veggies", price: 22.99 },
-    { mealName: "Schnitzel", discription: "A german speciality!", price: 15.5 },
-    {
-      mealName: "Barbecue Burger",
-      discription: "American, raw,meaty",
-      price: 12.99,
-    },
-    {
-      mealName: "Green Bowl",
-      discription: "Healthy and green...",
-      price: 10.2,
-    },
-  ];
+  const mealsList = mealsall.map((e) => (
+    <MealItem
+      key={e.id}
+      mealName={e.mealName}
+      discription={e.discription}
+      price={e.price}
+    ></MealItem>
+  ));
   return (
-    <div className={classes.availablemeals}>
-      {mealsall.map((e) => {
-        return (
-          <Meal
-            mealName={e.mealName}
-            discription={e.discription}
-            price={e.price}
-          ></Meal>
-        );
-      })}
-    </div>
+    <section className={classes.meals}>
+      <Card>
+        <ul>{mealsList}</ul>
+      </Card>
+    </section>
   );
+  // return (
+  //   <div className={classes.availablemeals}>
+  //     {mealsall.map((e) => {
+  //       return (
+  //         <Card>
+  //           <MealItem
+  //             key={e.id}
+  //             mealName={e.mealName}
+  //             discription={e.discription}
+  //             price={e.price}
+  //           ></MealItem>
+  //         </Card>
+  //       );
+  //     })}
+  //   </div>
+  // );
 }
 
 export default AvailableMeals;
