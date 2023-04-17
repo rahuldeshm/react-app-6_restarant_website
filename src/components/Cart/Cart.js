@@ -1,28 +1,34 @@
-import React from "react";
+import React, { useContext } from "react";
 import classes from "./Cart.module.css";
 import Modal from "../UI/Modal";
+import DataContext from "../../store/data-context";
 
 function Cart(props) {
+  const ctx = useContext(DataContext);
+  let price = 0;
   const cartItems = (
     <ul className={classes["cart-items"]}>
-      {[{ id: "e1", name: "Shshi", amount: 2, price: 12.99 }].map((e) => (
-        <li>{e.name}</li>
-      ))}
+      {ctx.cartitemlist.map((e) => {
+        price = price + e.price;
+        return <li key={e.id}>{e.name}</li>;
+      })}
     </ul>
   );
-  function closeHandler() {
-    props.closeHandler();
+
+  function ordering() {
+    console.log("Ordering");
   }
+
   return (
-    <Modal>
+    <Modal onClick={props.closeHandler}>
       {cartItems}
       <div className={classes.total}>
         <span>Total Amount</span>
-        <span>223.23</span>
+        <span>{price.toFixed(2)}</span>
       </div>
       <div className={classes.actions}>
-        <button onClick={closeHandler}>Close</button>
-        <button>Order</button>
+        <button onClick={props.closeHandler}>Close</button>
+        <button onClick={ordering}>Order</button>
       </div>
     </Modal>
   );

@@ -7,7 +7,7 @@ function Header(props) {
   return (
     <>
       <header className={classes.header}>
-        <h1>My Restaurant</h1>
+        <h1>Restaurant</h1>
         <HeaderCartButton openHandler={props.openHandler}></HeaderCartButton>
       </header>
       <div className={classes["main-image"]}>

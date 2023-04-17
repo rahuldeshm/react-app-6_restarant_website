@@ -4,7 +4,7 @@ import Meals from "./components/Meals/Meals";
 import Cart from "./components/Cart/Cart";
 
 function App() {
-  const [cart, setCart] = useState(true);
+  const [cart, setCart] = useState(false);
   function closeHandler() {
     setCart(false);
   }

@@ -17,13 +17,13 @@ const mealsall = [
     price: 16.99,
   },
   {
-    id: "e1",
+    id: "e3",
     mealName: "Barbecue Burger",
     discription: "American, raw, meaty",
     price: 12.99,
   },
   {
-    id: "e1",
+    id: "e4",
     mealName: "Green Bowl",
     discription: "Healthy.. and green...",
     price: 29.54,
