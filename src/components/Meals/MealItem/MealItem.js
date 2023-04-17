@@ -9,7 +9,7 @@ function MealItem(props) {
         <p className={classes.discription}>{props.discription}</p>
         <h3 className={classes.price}>{`$${props.price.toFixed(2)}`}</h3>
       </div>
-      <MealItemForm></MealItemForm>
+      <MealItemForm id={props.id}></MealItemForm>
     </li>
   );
 }

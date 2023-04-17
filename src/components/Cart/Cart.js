@@ -1,21 +1,30 @@
 import React from "react";
 import classes from "./Cart.module.css";
+import Modal from "../UI/Modal";
 
 function Cart(props) {
+  const cartItems = (
+    <ul className={classes["cart-items"]}>
+      {[{ id: "e1", name: "Shshi", amount: 2, price: 12.99 }].map((e) => (
+        <li>{e.name}</li>
+      ))}
+    </ul>
+  );
+  function closeHandler() {
+    props.closeHandler();
+  }
   return (
-    <div className={classes.cart}>
-      <div>
-        <p>Sushi</p>
-      </div>
+    <Modal>
+      {cartItems}
       <div className={classes.total}>
-        <h2>Total Amount</h2>
-        <h2>34.22</h2>
+        <span>Total Amount</span>
+        <span>223.23</span>
       </div>
       <div className={classes.actions}>
-        <button>Close</button>
+        <button onClick={closeHandler}>Close</button>
         <button>Order</button>
       </div>
-    </div>
+    </Modal>
   );
 }
 
