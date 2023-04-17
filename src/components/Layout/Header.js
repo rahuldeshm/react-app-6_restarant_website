@@ -1,6 +1,7 @@
 import React from "react";
 import mealsimage from "../../assets/meals.jpg";
 import classes from "./Header.module.css";
+import Cart from "../Cart/Cart";
 import HeaderCartButton from "./HeaderCartButton";
 
 function Header(props) {
@@ -8,6 +9,7 @@ function Header(props) {
     <>
       <header className={classes.header}>
         <h1>Online Restaurant</h1>
+        <Cart></Cart>
         <HeaderCartButton></HeaderCartButton>
       </header>
       <div className={classes["main-image"]}>
